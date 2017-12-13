@@ -1,15 +1,11 @@
-function WeightedSet(set) { // a faster version of PSet that only accepts string and number values.
+function WeightedSet(set) {
     this.items = new Object();
 
     if(set != undefined && set.constructor == WeightedSet) {
         for(var i in set.items) {
             this.increment(i, set.items[i]);
         }
-    } /*else if(set != undefined && set.constructor == PSet) {
-        for(var i in set.items) {
-            this.increment(set.items[i].value, set.items[i].p);
-        }
-    }*/ else if(set != undefined && set.constructor == Array) {
+    } else if(set != undefined && set.constructor == Array) {
         for(var i in set) {
             this.increment(set[i]);
         }
